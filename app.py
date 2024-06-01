@@ -2,6 +2,7 @@ import dash
 from dash import Dash, html, dcc
 
 app = Dash(__name__, use_pages=True)
+server=app.server
 
 app.layout = html.Div([
     html.H1("Exploration & Analysis of AED Locations in Relation to Emergency Services and Cardiac Arrests in Belgium"
@@ -16,8 +17,6 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
 
 
 

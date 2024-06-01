@@ -13,7 +13,7 @@ from geopy.distance import geodesic
 
 #########################################################################################################################################################
 
-cardiac = pd.read_csv(r"App/App Datasets/cardiac.csv",index_col=False)
+cardiac = pd.read_csv(r"App Datasets/cardiac.csv",index_col=False)
 
 # Your Mapbox access token
 mapbox_access_token = 'pk.eyJ1Ijoid2VuaGFuY3UiLCJhIjoiY2x3cTlrYjlnMDAybTJqczdzOWFwcWpjdyJ9.yNEGbGM7vNhqbdfdfFNTng'
@@ -41,7 +41,7 @@ layout = html.Div([
     html.Div([
         dcc.Graph(figure=fig_cluster, style={'width':'1400px','height':'600px'}),
         html.H1('Vectors Distribution in Provinces', style={'text-align': 'center'}),
-        html.Iframe(srcDoc=open(r"App/App Datasets/Cholorpleth_Counts_Municipalities.html", 'r').read(), 
+        html.Iframe(srcDoc=open(r'App Datasets/Cholorpleth_Counts_Municipalities.html', 'r').read(), 
                     style={'width': '1200px', 'height':'500px',"margin-bottom":"40px"})
     ],style={'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center'})
 ], style={'text-align':'center','align-items': 'center','background-color':'rgb(224, 255, 252)'})

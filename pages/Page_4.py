@@ -12,7 +12,7 @@ from dash.dependencies import Input, Output
 from geopy.distance import geodesic
 
 
-cardiac = pd.read_csv(r"App/App Datasets/cardiac.csv",index_col=False)
+cardiac = pd.read_csv(r"App Datasets/cardiac.csv",index_col=False)
 
 # Your Mapbox access token
 mapbox_access_token = 'pk.eyJ1Ijoid2VuaGFuY3UiLCJhIjoiY2x3cTlrYjlnMDAybTJqczdzOWFwcWpjdyJ9.yNEGbGM7vNhqbdfdfFNTng'
@@ -35,9 +35,9 @@ fig_cluster.update_layout(mapbox=dict(accesstoken=mapbox_access_token))
 
 ##################################################################################################################################################################
 
-vecotrs = gpd.read_file("App/App Datasets/Vecotrs.geojson")
-cardiac_location = gpd.read_file("App/App Datasets/Cardiac_location.geojson")
-aed = gpd.read_file(r"App/App Datasets/AED_GEO.geojson")
+vecotrs = gpd.read_file("App Datasets/Vecotrs.geojson")
+cardiac_location = gpd.read_file("App Datasets/Cardiac_location.geojson")
+aed = gpd.read_file(r"App Datasets/AED_GEO.geojson")
 aed = aed.to_crs(epsg=4326)
 aed = aed[['lat', 'lng']]
 
@@ -71,7 +71,6 @@ layout = html.Div([
     html.Br(),
     html.H2("Choose an Emergency Incident on the Map to Obtain the Nearest AED and Ambulance", style={'border': '2px solid red'}),
     html.Br(),
-    html.H3("Blue Dots: Heart Related Emergency",style={'text-align': 'left'}),
     html.Div([
             dcc.Graph(id='map', figure=fig_optim, config={'scrollZoom': True},style={'height':"800px"}),
             dcc.Store(id='pin-location')])

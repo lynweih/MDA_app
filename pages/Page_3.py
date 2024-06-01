@@ -12,31 +12,31 @@ from dash.dependencies import Input, Output
 import dash_table
 from dash_table import DataTable, FormatTemplate
 
-area_provinces = gpd.read_file("App/App Datasets/AREA_PROVINCES_NEW.geojson") 
+area_provinces = gpd.read_file("App Datasets/AREA_PROVINCES_NEW.geojson") 
 
-aed_per_municipality_ant = pd.read_csv(r"App/App Datasets/AED_per_municipality_antwerpen.csv", index_col=False)
-aed_per_municipality_brx = pd.read_csv(r"App/App Datasets/AED_per_municipality_bruxelles-brussel.csv", index_col=False)
-aed_per_municipality_liege = pd.read_csv(r"App/App Datasets/AED_per_municipality_liège.csv", index_col=False)
-aed_per_municipality_namur = pd.read_csv(r"App/App Datasets/AED_per_municipality_namur.csv", index_col=False)
-aed_per_municipality_hainaut = pd.read_csv(r"App/App Datasets/AED_per_municipality_hainaut.csv", index_col=False)
-aed_per_municipality_limburg = pd.read_csv(r"App/App Datasets/AED_per_municipality_limburg.csv", index_col=False)
-aed_per_municipality_luxembourg = pd.read_csv(r"App/App Datasets/AED_per_municipality_luxembourg.csv", index_col=False)
-aed_per_municipality_vlaams_braband = pd.read_csv(r"App/App Datasets/AED_per_municipality_vlaams-brabant.csv", index_col=False)
-aed_per_municipality_west_flanders = pd.read_csv(r"App/App Datasets/AED_per_municipality_west-vlaanderen.csv", index_col=False)
-aed_per_municipality_oost_flanders = pd.read_csv(r"App/App Datasets/AED_per_municipality_oost-vlaanderen.csv", index_col=False)
-aed_per_municipality_brabant_wallon = pd.read_csv(r"App/App Datasets/AED_per_municipality_brabant wallon.csv", index_col=False)
+aed_per_municipality_ant = pd.read_csv(r"App Datasets/AED_per_municipality_antwerpen.csv", index_col=False)
+aed_per_municipality_brx = pd.read_csv(r"App Datasets/AED_per_municipality_bruxelles-brussel.csv", index_col=False)
+aed_per_municipality_liege = pd.read_csv(r"App Datasets/AED_per_municipality_liège.csv", index_col=False)
+aed_per_municipality_namur = pd.read_csv(r"App Datasets/AED_per_municipality_namur.csv", index_col=False)
+aed_per_municipality_hainaut = pd.read_csv(r"App Datasets/AED_per_municipality_hainaut.csv", index_col=False)
+aed_per_municipality_limburg = pd.read_csv(r"App Datasets/AED_per_municipality_limburg.csv", index_col=False)
+aed_per_municipality_luxembourg = pd.read_csv(r"App Datasets/AED_per_municipality_luxembourg.csv", index_col=False)
+aed_per_municipality_vlaams_braband = pd.read_csv(r"App Datasets/AED_per_municipality_vlaams-brabant.csv", index_col=False)
+aed_per_municipality_west_flanders = pd.read_csv(r"App Datasets/AED_per_municipality_west-vlaanderen.csv", index_col=False)
+aed_per_municipality_oost_flanders = pd.read_csv(r"App Datasets/AED_per_municipality_oost-vlaanderen.csv", index_col=False)
+aed_per_municipality_brabant_wallon = pd.read_csv(r"App Datasets/AED_per_municipality_brabant wallon.csv", index_col=False)
 
-cardiac_municipality_anterpen = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_antwerpen.csv", index_col=False)
-cardiac_municipality_brabant_wall = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_brabant_wall.csv", index_col=False)
-cardiac_municipality_hainaut = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_hainaut.csv", index_col=False)
-cardiac_municipality_liege = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_liege.csv", index_col=False)
-cardiac_municipality_limburg = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_limburg.csv", index_col=False)
-cardiac_municipality_namur = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_namur.csv", index_col=False)
-cardiac_municipality_luxem = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_luxem.csv", index_col=False)
-cardiac_municipality_west_vlaand = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_west_vlaand.csv", index_col=False)
-cardiac_municipality_oost_vlaand = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_oost_vlaand.csv", index_col=False)
-cardiac_municipality_vlaams_braband = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_vlaams_brabant.csv", index_col=False)
-cardiac_municipality_brussels = pd.read_csv(r"App/App Datasets/CARDIAC_per_municipality_brussels.csv", index_col=False)
+cardiac_municipality_anterpen = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_antwerpen.csv", index_col=False)
+cardiac_municipality_brabant_wall = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_brabant_wall.csv", index_col=False)
+cardiac_municipality_hainaut = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_hainaut.csv", index_col=False)
+cardiac_municipality_liege = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_liege.csv", index_col=False)
+cardiac_municipality_limburg = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_limburg.csv", index_col=False)
+cardiac_municipality_namur = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_namur.csv", index_col=False)
+cardiac_municipality_luxem = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_luxem.csv", index_col=False)
+cardiac_municipality_west_vlaand = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_west_vlaand.csv", index_col=False)
+cardiac_municipality_oost_vlaand = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_oost_vlaand.csv", index_col=False)
+cardiac_municipality_vlaams_braband = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_vlaams_brabant.csv", index_col=False)
+cardiac_municipality_brussels = pd.read_csv(r"App Datasets/CARDIAC_per_municipality_brussels.csv", index_col=False)
 
 # list_cardiac_municipality = [cardiac_municipality_anterpen, cardiac_municipality_brabant_wall, cardiac_municipality_hainaut, cardiac_municipality_liege,
 #                              cardiac_municipality_limburg,cardiac_municipality_namur,cardiac_municipality_luxem,cardiac_municipality_west_vlaand,
@@ -188,7 +188,7 @@ def bubble_table(province_dataset):
 
 #################################################################################################################################################################
 
-cardiac = pd.read_csv(r"App/App Datasets/cardiac.csv",index_col=False)
+cardiac = pd.read_csv(r"App Datasets/cardiac.csv",index_col=False)
 
 # Your Mapbox access token
 mapbox_access_token = 'pk.eyJ1Ijoid2VuaGFuY3UiLCJhIjoiY2x3cTlrYjlnMDAybTJqczdzOWFwcWpjdyJ9.yNEGbGM7vNhqbdfdfFNTng'
@@ -205,6 +205,7 @@ fig_cluster = px.scatter_mapbox(cardiac, lat='latitude intervention', lon='longi
 
 # Update the layout with your Mapbox token
 fig_cluster.update_layout(mapbox=dict(accesstoken=mapbox_access_token))
+
 
  
 
@@ -269,7 +270,7 @@ layout = html.Div([
     html.Br(),
     html.Div([
         html.H1("Ratio of (Cardiac Arrest Number / AMB+PIT+MUG+AED+1)"),
-        html.Iframe(srcDoc=open(r"App/App Datasets/Cholorpleth_Cardiac_Arrests_Municipalities.html", 'r').read(), 
+        html.Iframe(srcDoc=open(r"App Datasets/Cholorpleth_Cardiac_Arrests_Municipalities.html", 'r').read(), 
                     style={'width': '1200px', 'height':'500px',"margin-bottom":"40px"})
     ])
 ],style={'text-align':'center','background-color':'rgb(224, 255, 252)'})
